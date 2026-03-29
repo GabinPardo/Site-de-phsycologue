@@ -3,148 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Héléna Deman - Psychologue en développement</title>
+  <title>Héléna Deman - Psychologue</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { line-height: 1.6; color: #333; background:#fff; }
+    body { color: #333; }
 
-    /* NAVIGATION */
-    header { background-color: #ffe4e6; position: sticky; top:0; z-index:1000; }
-    .navbar { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
-    .logo { font-weight:600; font-size:1.5rem; color:#333; }
-    .nav-links { list-style:none; display:flex; gap:1.5rem; }
-    .nav-links a { text-decoration:none; color:#333; font-weight:600; transition:0.3s; }
-    .nav-links a:hover { color:#f472b6; }
+    header { background: #ffe4e6; position: sticky; top:0; }
+    .navbar { display:flex; justify-content:space-between; padding:1rem 2rem; }
+    .nav-links { display:flex; gap:1rem; list-style:none; }
+    .nav-links a { text-decoration:none; color:#333; font-weight:600; }
 
-    /* HERO */
-    .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:#fce7f3; padding:0 1rem; }
-    .hero h1 { font-size:3rem; margin-bottom:1rem; }
-    .hero p { font-size:1.2rem; margin-bottom:2rem; max-width:600px; }
-    .btn { background-color:#f472b6; color:white; padding:0.8rem 2rem; border:none; border-radius:25px; cursor:pointer; font-weight:600; transition:0.3s; text-decoration:none; }
-    .btn:hover { background-color:#ec4899; }
+    .hero {
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:#fce7f3;
+    }
 
-    /* SECTION TITRE */
-    section h2 { text-align:center; font-size:2rem; margin-bottom:2rem; color:#f472b6; }
+    .hero h1 { font-size:3rem; }
+    .btn {
+      margin-top:1rem;
+      background:#f472b6;
+      color:white;
+      padding:0.8rem 2rem;
+      border-radius:25px;
+      text-decoration:none;
+    }
 
-    /* ABOUT */
-    .about { padding:4rem 1rem; background:#fff0f6; }
-    .about-text { max-width:700px; margin:0 auto; text-align:center; }
-    .about-text p { margin-bottom:1rem; }
+    section { padding:4rem 1rem; }
 
-    /* SERVICES */
-    .services { padding:4rem 1rem; }
-    .service-list { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
-    .service-card { background:#ffe4e6; padding:1.5rem; border-radius:15px; width:220px; text-align:center; transition:transform 0.3s; }
-    .service-card:hover { transform:translateY(-5px); }
-    .service-card h3 { margin-bottom:0.5rem; color:#f472b6; }
+    h2 { text-align:center; color:#f472b6; margin-bottom:2rem; }
 
-    /* APPOINTMENT */
-    .appointment { padding:4rem 1rem; background:#fff0f6; }
-    .appointment form { max-width:400px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; }
-    input, textarea, select { padding:0.8rem; border-radius:10px; border:1px solid #ccc; font-size:1rem; }
-    button { background-color:#f472b6; color:white; border:none; padding:0.8rem; border-radius:25px; font-weight:600; cursor:pointer; transition:0.3s; }
-    button:hover { background-color:#ec4899; }
+    .about {
+      background:#fff0f6;
+      text-align:center;
+    }
 
-    /* CONTACT */
-    .contact { padding:4rem 1rem; text-align:center; }
-    .contact p { margin-bottom:0.5rem; }
-    .contact a { color:#f472b6; text-decoration:none; }
+    .about-photo {
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:1.5rem;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
 
-    /* FOOTER */
-    footer { padding:2rem 1rem; text-align:center; background:#ffe4e6; margin-top:2rem; }
+    .about-text {
+      max-width:600px;
+      margin:auto;
+    }
 
-    /* RESPONSIVE */
+    .services {
+      text-align:center;
+    }
+
+    .service-list {
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .service-card {
+      background:#ffe4e6;
+      padding:1.5rem;
+      border-radius:15px;
+      width:220px;
+    }
+
+    .appointment {
+      background:#fff0f6;
+      text-align:center;
+    }
+
+    form {
+      max-width:400px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+    }
+
+    input, textarea, select {
+      padding:0.8rem;
+      border-radius:10px;
+      border:1px solid #ccc;
+    }
+
+    button {
+      background:#f472b6;
+      color:white;
+      padding:0.8rem;
+      border:none;
+      border-radius:25px;
+    }
+
+    .contact {
+      text-align:center;
+    }
+
+    footer {
+      text-align:center;
+      padding:2rem;
+      background:#ffe4e6;
+    }
+
     @media(max-width:768px){
-      .hero h1{ font-size:2.2rem; }
-      .service-list{ flex-direction:column; align-items:center; }
+      .service-list { flex-direction:column; align-items:center; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Héléna Deman</div>
-      <ul class="nav-links">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#appointment">Rendez-vous</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <div><strong>Héléna Deman</strong></div>
+    <ul class="nav-links">
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#appointment">Rendez-vous</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h1>Héléna Deman</h1>
-    <p>Psychologue en développement - Accompagnement des enfants et adolescents pour un mieux-être.</p>
-    <a href="#appointment" class="btn">Prendre rendez-vous</a>
-  </section>
+<section id="home" class="hero">
+  <h1>Héléna Deman</h1>
+  <p>Psychologue en développement pour enfants et adolescents</p>
+  <a href="#appointment" class="btn">Prendre rendez-vous</a>
+</section>
 
-  <!-- À PROPOS -->
-  <section id="about" class="about">
-    <h2>À propos</h2>
-    <div class="about-text">
-      <p>Je suis Héléna Deman, psychologue spécialisée dans le développement des enfants et adolescents. Je possède un master en psychologie et je mets mon écoute et mon expérience au service du bien-être de vos enfants.</p>
-      <p>Mon approche est centrée sur l’écoute, le respect du rythme de chacun et l’accompagnement personnalisé.</p>
-      <p>Chaque enfant mérite d’être compris et accompagné pour s’épanouir pleinement.</p>
+<section id="about" class="about">
+  <h2>À propos</h2>
+
+  <!-- PHOTO -->
+  <img src="images/photo.jpg" alt="Héléna Deman" class="about-photo">
+
+  <div class="about-text">
+    <p>Je suis Héléna Deman, psychologue spécialisée dans le développement des enfants et adolescents.</p>
+    <p>Je possède un master en psychologie et je mets mon écoute au service du bien-être.</p>
+    <p>Mon approche est centrée sur l’écoute et l’accompagnement personnalisé.</p>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <h2>Services</h2>
+  <div class="service-list">
+    <div class="service-card">
+      <h3>Émotions</h3>
+      <p>Comprendre et gérer les émotions.</p>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <h2>Services</h2>
-    <div class="service-list">
-      <div class="service-card">
-        <h3>Accompagnement émotionnel</h3>
-        <p>Aider votre enfant ou adolescent à comprendre et gérer ses émotions.</p>
-      </div>
-      <div class="service-card">
-        <h3>Gestion de l’anxiété</h3>
-        <p>Techniques adaptées pour surmonter le stress et l’anxiété.</p>
-      </div>
-      <div class="service-card">
-        <h3>Développement personnel</h3>
-        <p>Soutien dans la confiance en soi et l’épanouissement.</p>
-      </div>
+    <div class="service-card">
+      <h3>Anxiété</h3>
+      <p>Réduire le stress et les angoisses.</p>
     </div>
-  </section>
+    <div class="service-card">
+      <h3>Confiance</h3>
+      <p>Développer l’estime de soi.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- PRISE DE RENDEZ-VOUS -->
-  <section id="appointment" class="appointment">
-    <h2>Prendre rendez-vous</h2>
-    <form action="mailto:helena@example.com" method="post" enctype="text/plain">
-      <input type="text" name="nom" placeholder="Nom" required>
-      <input type="text" name="prenom" placeholder="Prénom" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="tel" name="tel" placeholder="Téléphone" required>
-      <select name="type" required>
-        <option value="">Sélectionnez le type de consultation</option>
-        <option value="enfant">Enfant</option>
-        <option value="ado">Adolescent</option>
-      </select>
-      <textarea name="message" placeholder="Votre message..." rows="4"></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+<section id="appointment" class="appointment">
+  <h2>Rendez-vous</h2>
+  <form>
+    <input type="text" placeholder="Nom" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button>Envoyer</button>
+  </form>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Adresse : 17 rue Jean Adrien Pioceau</p>
-    <p>Téléphone : <a href="tel:0660990733">0660990733</a></p>
-    <p>Email : <a href="mailto:helena@example.com">helena@example.com</a></p>
-    <p>Les informations restent confidentielles et sécurisées.</p>
-  </section>
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>📍 17 rue Jean Adrien Pioceau</p>
+  <p>📞 0660990733</p>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Héléna Deman - Tous droits réservés</p>
-  </footer>
+<footer>
+  <p>© 2026 Héléna Deman</p>
+</footer>
 
 </body>
 </html>
